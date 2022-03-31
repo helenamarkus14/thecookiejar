@@ -9,8 +9,6 @@ An app to track all of the remarkable and unique cookies that have blessed your 
 5. bootstrap/sass maybe?
 
 
-
-
 # User Story
 LANDING PAGE
 - AAU, I want to be able to sign up and log in with email and password.
@@ -37,6 +35,6 @@ BAKERIES LIST
 
 
 # Wireframes
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVOBMn4l0=/?moveToViewport=126,4305,9194,4730" frameBorder="0" scrolling="no" allowFullScreen></iframe>
+https://miro.com/app/board/uXjVOBMn4l0=/?invite_link_id=797635384466 
 ![the cookie jar](https://user-images.githubusercontent.com/80299318/160983597-828ebadf-9bca-4f09-af94-1f11f4a819cf.jpg)
 
