@@ -5,7 +5,8 @@ An app to track all of the remarkable and unique cookies that have blessed your 
 1. Python
 2. Django
 3. CSS
-4. bootstrap/sass maybe?
+4. Postgres
+5. bootstrap/sass maybe?
 
 
 
@@ -33,3 +34,7 @@ BAKERIES LIST
 
 
 <img width="344" alt="Screen Shot 2022-03-29 at 11 43 19 PM" src="https://user-images.githubusercontent.com/80299318/160759591-b6378d6c-dfcb-4079-a39d-600726ee37c8.png">
+
+
+# Wireframes
+
