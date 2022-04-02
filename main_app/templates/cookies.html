@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form>
+        <div class="d-flex justify-content-center">
+            <input type="text" name="name" placeholder="name"/>
+            <input type="submit" value="Search"/>
+        <a href="{% url 'cookies' %}" class='btn btn-sm btn-secondary' role="button">Clear Search</a>
+        </div>
+    </form>
+
+    <h1>{{header}}</h1>
+
+    {% for cookie in cookies %}
+    <div class="d-flex justify-content-center">
+    <div class="card border border-5" style="width: 18em; border: 10px solid #7E9B80!important;background: linear-gradient(140deg, #7E9B80 0%, #687f6a 69%, #275009 100%); font-family: 'Open Sans', Helvetica, sans-serif;">
+        <a href="{% url 'cookie_detail' cookie.pk %}"> 
+            <img src="{{cookie.img}}" class="card-img-top" style="height: auto;" alt="{{cookie.name}}">
+            </a>
+    <div class="card-body" style="text-align: center; font-size: 1em; color:#E3F0DB;">
+        <p class="name">{{cookie.name}}</p> 
+    
+    <p>Description:{{cookie.description}}</p>
+    <p>Eaten by:
+        <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
+    </p>
+    </div>
+    </div>
+</div>
+
+
+    {% endfor %}
+{% endblock %}
+
+
