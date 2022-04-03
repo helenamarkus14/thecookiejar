@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+{% for cookie in cookies %}
+<h1>{{ username}}'s Collection</h1>
+<a class="d-flex justify-content-center btn-sm btn-secondary addPanda"  href="{% url 'create_cookie' %}">Add Cookie</a>
+    <div class="d-flex justify-content-center">
+    <a href="/cookies/{{ cookie.id }}">
+        <div class="cookies" style="width: auto; border: 5px solid #7E9B80!important;background: linear-gradient(140deg, #7E9B80 0%, #687f6a 69%, #275009 100%); font-family: 'Open Sans', Helvetica, sans-serif; text-align: center;">{{ panda.name }}</div>
+    </a>
+    </div>  
+{% endfor %}
+
+{% endblock %}

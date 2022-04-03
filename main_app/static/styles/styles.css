@@ -3,3 +3,22 @@ h1{
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
+
+
+.cookieList {
+
+}
+
+.card-img-top {
+    width: 18em;
+}
+
+.card-horizontal{
+    display: flex;
+    flex-grow: 0;
+}
+
+.card-body {
+    width: 25em;
+
+}

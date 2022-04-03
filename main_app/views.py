@@ -36,13 +36,53 @@ class Cookies(TemplateView):
             context['header'] = "Cookies"
         return context        
 
+#Create new cookie
+@method_decorator(login_required, name='dispatch')
+class Create_Cookie(CreateView):
+    model = Cookie
+    fields = '__all__'
+    template_name = 'create_cookie.html'
 
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/cookies')
+class Cookie_Detail(DetailView):  
+    model = Cookie
+    template_name = 'cookie_detail.html'      
 
+# Update Cookie
+@method_decorator(login_required, name='dispatch') 
+class Update_Cookie(UpdateView):
+    model = Cookie
+    fields ='__all__'
+    template_name = 'update_cookie.html'
+    def get_success_url(self):
+        return reverse('cookie_detail', kwargs={'pk': self.object.pk})
 
-
+# Delete Cookie
+@method_decorator(login_required, name='dispatch') 
+class Delete_Cookie(DeleteView):
+    model = Cookie
+    template_name = 'delete_cookie.html'
+    success_url = '/cookies/'
 
 
 # Bakery Views
+
+
+
+
+
+
+# profile
+
+@login_required
+def profile(request, username):
+    user = User.objects.get(username=username)
+    cookies = Cookie.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'cookies': cookies}) 
 # Login, Logout, and SignUp
 
 def login_view(request):
@@ -65,3 +105,21 @@ def login_view(request):
     else:
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})    
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            print('Hi', user.username)
+            return HttpResponseRedirect('/user/'+str(user))
+        else:
+            return render(request, 'signup.html', {'form': form})   
+    else:
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form': form})
+        
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')        
