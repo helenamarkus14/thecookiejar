@@ -85,6 +85,7 @@ def profile(request, username):
     return render(request, 'profile.html', {'username': username, 'cookies': cookies}) 
 # Login, Logout, and SignUp
 
+
 def login_view(request):
     # if post, then authenticate (user submitted username and password)
     if request.method == 'POST':
@@ -104,8 +105,12 @@ def login_view(request):
                 return render(request, 'signup.html', {'form': form})
     else:
         form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})    
+        return render(request, 'login.html', {'form': form})  
 
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/home') 
+     
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -120,6 +125,4 @@ def signup_view(request):
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
         
-def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect('/')        
+      
