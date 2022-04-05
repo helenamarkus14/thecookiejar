@@ -2,10 +2,8 @@
 
 
 {% block content %}
-
-
-{% for cookie in cookies %}
 <h1>{{ username}}'s Collection</h1>
+{% for cookie in cookies %}
 <a class="d-flex justify-content-center btn-sm btn-secondary addPanda"  href="{% url 'create_cookie' %}">Add Cookie</a>
     <div class="d-flex justify-content-center">
     <a href="/cookies/{{ cookie.id }}">
