@@ -91,7 +91,7 @@ class CreateBakery(CreateView):
 class UpdateBakery(UpdateView):
     model = Bakery
     fields = '__all__'
-    template_name = 'bakery_update.html'
+    template_name = 'update_bakery.html'
     sucess_url = '/bakeries'
 
 @method_decorator(login_required, name='dispatch')   
