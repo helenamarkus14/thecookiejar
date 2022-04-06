@@ -8,8 +8,8 @@ urlpatterns = [
     path('home/', views.Home.as_view(), name="home"),
     path('user/<username>/', views.profile, name='profile'),
     path('cookies/', views.Cookies.as_view(), name ='cookies'),
-    path('cookies/new', views.Create_Cookie.as_view(), name ='create_cookie'),
-    path('cookies/<int:pk>/', views.Cookie_Detail.as_view(), name = "cookie_detail"),
-    path('cookie/<int:pk>/update', views.Update_Cookie.as_view(), name = "update_cookie"),
-    path('cookie/<int:pk>/delete', views.Delete_Cookie.as_view(), name = "delete_cookie"),
+    path('cookies/new', views.CreateCookie.as_view(), name ='create_cookie'),
+    path('cookies/<int:pk>/', views.CookieDetail.as_view(), name = "cookie_detail"),
+    path('cookie/<int:pk>/update', views.UpdateCookie.as_view(), name = "update_cookie"),
+    path('cookie/<int:pk>/delete', views.DeleteCookie.as_view(), name = "delete_cookie"),
 ]

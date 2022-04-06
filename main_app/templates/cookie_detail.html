@@ -2,28 +2,26 @@
 
 {% block content %}
 <div class="d-flex justify-content-center">
-    <div class="card border border-5" style="width: 18em; border: 10px solid #7E9B80!important;background: linear-gradient(140deg, #7E9B80 0%, #687f6a 69%, #275009 100%); font-family: 'Open Sans', Helvetica, sans-serif;">
-  <img src="{{cookie.img}}" class="card-img-top" style="height: auto;" alt="{{cookie.name}}">
-    <p class="cookiename" style="text-align: center; font-size: 1em;">{{cookie.name}}</p>
-
-    <div class="card-body" style="text-align: center; font-size: 1em;">
-    <p>Description: {{cookie.description}}</p>
-    <p>Apperance: {{cookie.appearance}}</p>
-    <p>Taste: {{cookie.taste}}</p>
-    <p>Overall: {{cookie.overall_rating}}</p>
-    <p>Comments: {{cookie.comments}}</p>
-    <p>Eaten by:
-        <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
-    </p>
-    
-    <div>
-        <a href="{% url 'update_cookie' cookie.pk %}" class="btn btn-info" role="button">Update</a>
-        <a href="{% url 'delete_cookie' cookie.pk %}" class="btn btn-danger" role="button">DELETE</a>
+    <div class="card-horizontal border border-5 cookieList">
+        <a href="{% url 'cookie_detail' cookie.pk %}"> 
+            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top" style="height: auto;" alt="{{cookie.name}}">
+            </a>
+    <div class="card-body" style="text-align: center; font-size: 1em; color:#E3F0DB;">
+        <p class="name">{{cookie.name}}</p> 
+        <p>Apperance: {{cookie.appearance}}</p>
+        <p>Taste: {{cookie.taste}}</p>
+        <p>Overall: {{cookie.overall_rating}}</p>
+        <p>Comments: {{cookie.comments}}</p>
+        <p>Description:{{cookie.description}}</p>
+        <p>Eaten by:
+            <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
+        </p>
+        <div>
+            <a href="{% url 'update_cookie' cookie.pk %}" class="btn btn-info" role="button">Update</a>
+            <a href="{% url 'delete_cookie' cookie.pk %}" class="btn btn-danger" role="button">DELETE</a>
+        </div>
+    </div>
     </div>
 </div>
-</div>
-
-</div>
-
-
+    
 {% endblock %}
