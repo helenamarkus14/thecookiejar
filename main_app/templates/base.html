@@ -43,6 +43,7 @@
               <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton1">
                 {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'profile' user.username %}">My Cookie Jar</a></li>
+                <li><a class="dropdown-item" href="/cookies">All Cookies</a></li>
                 </li>
                 <li class="nav-item">
                 <a class ="nav-link" href="{% url 'logout' %}">Logout</a>

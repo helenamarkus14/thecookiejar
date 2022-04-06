@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views import View # <- View class to handle requests
 from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
-from .models import Cookie
+from .models import Cookie, Bakery
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
@@ -38,7 +38,7 @@ class Cookies(TemplateView):
 
 #Create new cookie
 @method_decorator(login_required, name='dispatch')
-class Create_Cookie(CreateView):
+class CreateCookie(CreateView):
     model = Cookie
     fields = '__all__'
     template_name = 'create_cookie.html'
@@ -48,13 +48,14 @@ class Create_Cookie(CreateView):
         self.object.user = self.request.user
         self.object.save()
         return HttpResponseRedirect('/cookies')
-class Cookie_Detail(DetailView):  
+
+class CookieDetail(DetailView):  
     model = Cookie
     template_name = 'cookie_detail.html'      
 
 # Update Cookie
 @method_decorator(login_required, name='dispatch') 
-class Update_Cookie(UpdateView):
+class UpdateCookie(UpdateView):
     model = Cookie
     fields ='__all__'
     template_name = 'update_cookie.html'
@@ -63,7 +64,7 @@ class Update_Cookie(UpdateView):
 
 # Delete Cookie
 @method_decorator(login_required, name='dispatch') 
-class Delete_Cookie(DeleteView):
+class DeleteCookie(DeleteView):
     model = Cookie
     template_name = 'delete_cookie.html'
     success_url = '/cookies/'
@@ -71,6 +72,33 @@ class Delete_Cookie(DeleteView):
 
 # Bakery Views
 
+def bakeries(request):
+    bakeries = Bakery.objects.all()
+    return render(request, 'bakeries.html', {'bakeries': bakeries})
+
+def bakery_details(request, bakery_id):
+    bakery = Bakery.objects.get(id=bakery_id)
+    return render(request, 'bakery_details.html', {'bakery': bakery})
+
+@method_decorator(login_required, name='dispatch')
+class CreateBakery(CreateView):
+    model = Bakery
+    fields = '__all__'
+    template_name = 'create_bakery_form.html'
+    success_url = '/bakeries'
+
+@method_decorator(login_required, name='dispatch')
+class UpdateBakery(UpdateView):
+    model = Bakery
+    fields = '__all__'
+    template_name = 'bakery_update.html'
+    sucess_url = '/bakeries'
+
+@method_decorator(login_required, name='dispatch')   
+class DeleteBakery(DeleteView):
+    model = Bakery
+    template_name = 'delete_bakery.html'
+    sucess_url = '/bakeries'     
 
 
 
@@ -110,7 +138,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/home') 
-     
+
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
