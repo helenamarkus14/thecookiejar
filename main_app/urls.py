@@ -12,4 +12,10 @@ urlpatterns = [
     path('cookies/<int:pk>/', views.CookieDetail.as_view(), name = "cookie_detail"),
     path('cookie/<int:pk>/update', views.UpdateCookie.as_view(), name = "update_cookie"),
     path('cookie/<int:pk>/delete', views.DeleteCookie.as_view(), name = "delete_cookie"),
+
+    path('bakeries/', views.bakeries, name='bakeries'),
+    path('bakeries/<int:bakery_id>/', views.bakery_details, name='bakery_detail'),
+    path('bakeries/create/', views.CreateBakery.as_view(), name='create_bakery'),
+    path('bakeries/<int:pk>/update/', views.UpdateBakery.as_view(), name='update_bakery'),
+    path('bakeries/<int:pk>/delete/', views.DeleteBakery.as_view(), name='delete_bakery'),
 ]

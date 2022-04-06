@@ -1,13 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Vibur');
+
 h1{
     color: #3A3644;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
 
-
-.cookieList {
-
+.milkcookies {
+    background-image: url('./images/milkcookies.png');
+    background-repeat: no-repeat;
+    background-position: center -50px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 65%;
+    background-color: #DDB4CB;
+    background-attachment: fixed;
 }
+
+/* .milkcookies {
+    background-image: url('/main_app/static/images/milkcookies.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
 
 .card-img-top {
     width: 18em;
@@ -20,5 +39,84 @@ h1{
 
 .card-body {
     width: 25em;
+    text-align: center; 
+    font-size: 1em; 
+    color: #D6B0D8;
+    background-color: #3A3644;
+    opacity: 90%;
+}
 
+.navbar {
+    background-color: #3A3644;
+}
+
+.navbar-brand, .dropdown-toggle, .dropdown-item{
+    font: 5vh "Vibur";
+    color: rgb(250, 217, 248);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
+
+  }
+  @keyframes blink {
+    78% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    79%{
+       color: #333;
+    }
+    80% {
+      
+      text-shadow: none;
+    }
+    81% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    82% {
+      color: #333;
+      text-shadow: none;
+    }
+    83% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    92% {
+      color: #333;
+      text-shadow: none;
+    }
+    92.5% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+  }
+  
+  .dropdown-item {
+      font-size: medium;
+      font: 400 2vh 'Open Sans';
+      background-color: #3A3644;
+  }
+  .dropdown-item:hover {
+    background-color: #3A3644;
+    color:#fdf4ff;
+  }
+  .dropdown-menu {
+    background-color: #3A3644;
+  }
+  .dropdown-menu:hover {
+    color:#fdf4ff;
+  }
+  .dropdown-toggle:hover {
+    color:#fdf4ff;
+
+  }
+  .navbar-brand:hover {
+    color:#fdf4ff;
+  }
+
+/* FORMS */
+
+.newForm {
+    width: 400px;
+    justify-content: center;
+  
 }

@@ -1,5 +1,6 @@
 {% load static %}
 {% load bootstrap5 %}
+{% load crispy_forms_tags %}
 {% load cloudinary %}
 <!DOCTYPE html>
 <html lang="en">
@@ -26,9 +27,9 @@
     <title>{%block title%}{% endblock %}</title>
 </head>
 <body>
-  <nav class="navbar sticky-top navbar-expand-lg bg-light">
+  <nav class="navbar sticky-top navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="/home">the cookie jar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <i class="fas fa-bars"></i>
   </button>
@@ -37,16 +38,18 @@
         <ul class="navbar-nav mr-auto w-100 justify-content-end">
           <li class="nav-item">
             <div class="dropdown">
-            <button class="nav-item btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="nav-item btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="http://i.stack.imgur.com/e2S63.png" width="20" />
               Cookies
               </button>
               <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton1">
                 {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'profile' user.username %}">My Cookie Jar</a></li>
                 <li><a class="dropdown-item" href="/cookies">All Cookies</a></li>
+                <li><a class="dropdown-item" href="/bakeries">All Bakeries</a></li>
                 </li>
                 <li class="nav-item">
-                <a class ="nav-link" href="{% url 'logout' %}">Logout</a>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
@@ -54,6 +57,7 @@
                 <li class="nav-item">
                 <a class="nav-link"href="{% url 'signup' %}">SignUp</a>
                 <li><a class="dropdown-item" href="/cookies">All Cookies</a></li>
+                <li><a class="dropdown-item" href="/bakeries">All Bakeries</a></li>
                 {% endif %}
                
               </ul>

@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app',
     'bootstrap5',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'cloudinary',
     'cloudinary_storage',
 ]
@@ -61,6 +63,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'thecookiejar.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {

@@ -51,7 +51,14 @@ class CreateCookie(CreateView):
 
 class CookieDetail(DetailView):  
     model = Cookie
-    template_name = 'cookie_detail.html'      
+    template_name = 'cookie_detail.html'  
+
+    # def get_queryset(self, *args, **kwargs):
+    #     q = self.request.GET.get('q')
+    #     order_by = self.request.GET.get('overall_rating')  
+    #     self.cookies = Cookie.objects.filter(
+            
+    #     )
 
 # Update Cookie
 @method_decorator(login_required, name='dispatch') 
@@ -91,7 +98,7 @@ class CreateBakery(CreateView):
 class UpdateBakery(UpdateView):
     model = Bakery
     fields = '__all__'
-    template_name = 'bakery_update.html'
+    template_name = 'update_bakery.html'
     sucess_url = '/bakeries'
 
 @method_decorator(login_required, name='dispatch')   
@@ -131,6 +138,8 @@ def login_view(request):
                     # feel free to redirect them somewhere
             else: 
                 return render(request, 'signup.html', {'form': form})
+        else:
+                return render(request, 'login.html', {'form': form})        
     else:
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})  
