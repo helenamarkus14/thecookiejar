@@ -1,21 +1,27 @@
 {% extends 'base.html' %} 
 
 {% block content %}
+<body class="milkcookies"></body>
 <div class="d-flex justify-content-center">
     <div class="card-horizontal border border-5 cookieList">
         <a href="{% url 'cookie_detail' cookie.pk %}"> 
-            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top" style="height: auto;" alt="{{cookie.name}}">
+            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
             </a>
-    <div class="card-body" style="text-align: center; font-size: 1em; color:#E3F0DB;">
+    <div class="card-body">
         <p class="name">{{cookie.name}}</p> 
-        <p>Apperance: {{cookie.appearance}}</p>
-        <p>Taste: {{cookie.taste}}</p>
+        <p>Description: {{cookie.description}}</p>
+        <p>Apperance: {{cookie.appearance}} &nbsp; &nbsp;  Taste: {{cookie.taste}}</p>
         <p>Overall: {{cookie.overall_rating}}</p>
         <p>Comments: {{cookie.comments}}</p>
-        <p>Description:{{cookie.description}}</p>
         <p>Eaten by:
             <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
         </p>
+        {% for bakery in cookie.bakery.all %}
+        <div>{{bakery.name}}</div>
+            {% empty %}
+                <div> no bakery info </div>
+            {% endfor %}
+
         <div>
             <a href="{% url 'update_cookie' cookie.pk %}" class="btn btn-info" role="button">Update</a>
             <a href="{% url 'delete_cookie' cookie.pk %}" class="btn btn-danger" role="button">DELETE</a>
@@ -23,5 +29,5 @@
     </div>
     </div>
 </div>
-    
+</body>
 {% endblock %}

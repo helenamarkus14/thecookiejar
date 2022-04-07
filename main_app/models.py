@@ -13,7 +13,7 @@ class Bakery(models.Model):
     name = models.CharField(max_length=50)
     location = models.CharField(max_length=100)
     cost = models.CharField(max_length=5, choices = PRICE_CHOICES, default='$')
-    webiste = models.CharField(max_length=250)
+    website = models.CharField(max_length=250)
 
     def __str__(self) -> str:
         return self.name
@@ -40,6 +40,7 @@ class Cookie(models.Model):
     taste =  models.CharField(max_length=3, choices = RATING_CHOICES, default='1')
     overall_rating = models.CharField(max_length=3, choices = RATING_CHOICES, default='1')
     user = models.ForeignKey(User, on_delete=models.CASCADE, default="1") #one to many
+    bakery = models.ManyToManyField(Bakery) #M:M
     comments = models.CharField(max_length=250)
 
     def __str__(self):

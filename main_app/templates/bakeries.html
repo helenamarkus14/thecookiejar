@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="milkcookies">
+    <form>
+        <div class="d-flex justify-content-center">
+            <input type="text" name="name" placeholder="name"/>
+            <input type="submit" value="Search"/>
+        <a href="{% url 'bakeries' %}" class='btn btn-sm btn-secondary' role="button">Clear Search</a>
+        </div>
+    </form>
+
+    <h1>{{header}}</h1>
+    <a href="{% url 'create_bakery' %}">Add Bakery</a>
+    {% for bakery in bakeries %}
+    <div class="d-flex justify-content-center">
+    <div class="card-horizontal border border-5 cookieList">
+        <div class="card-body position-relative">
+            <a href="{% url 'bakery_detail' bakery.id %}" class="stretched-link"></a>
+        <p class="name">{{bakery.name}}</p> 
+    
+    <p>{{bakery.location}}</p>
+    </a>
+    </div>
+    </div>
+</div>
+
+
+    {% endfor %}
+{% endblock %}
+</body>
+
+
