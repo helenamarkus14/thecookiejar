@@ -85,7 +85,7 @@ def bakeries(request):
 
 def bakery_details(request, bakery_id):
     bakery = Bakery.objects.get(id=bakery_id)
-    return render(request, 'bakery_details.html', {'bakery': bakery})
+    return render(request, 'bakery_detail.html', {'bakery': bakery})
 
 @method_decorator(login_required, name='dispatch')
 class CreateBakery(CreateView):

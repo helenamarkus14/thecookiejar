@@ -13,7 +13,7 @@ class Bakery(models.Model):
     name = models.CharField(max_length=50)
     location = models.CharField(max_length=100)
     cost = models.CharField(max_length=5, choices = PRICE_CHOICES, default='$')
-    webiste = models.CharField(max_length=250)
+    website = models.CharField(max_length=250)
 
     def __str__(self) -> str:
         return self.name

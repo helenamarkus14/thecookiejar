@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <div class="card-horizontal border border-5 cookieList">
+    <div class="card-body" style="text-align: center; font-size: 1em; color:#E3F0DB;">
+        <a href="{% url 'bakery_detail' bakery.id %}"> </a>
+        <p class="name">{{bakery.name}}</p> 
+        <p>{{bakery.cost}}</p>
+        <p>{{bakery.location}}</p>
+        <p>{{bakery.website}}</p>
+
+        <div>
+            <a href="{% url 'update_bakery' bakery.id %}" class="btn btn-info" role="button">Update</a>
+            <a href="{% url 'delete_bakery' bakery.id %}" class="btn btn-danger" role="button">DELETE</a>
+        </div>
+    </div>
+    </div>
+</div>
+    
+{% endblock %}

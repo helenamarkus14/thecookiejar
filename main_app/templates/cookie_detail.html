@@ -8,14 +8,20 @@
             </a>
     <div class="card-body" style="text-align: center; font-size: 1em; color:#E3F0DB;">
         <p class="name">{{cookie.name}}</p> 
+        <p>Description:{{cookie.description}}</p>
         <p>Apperance: {{cookie.appearance}}</p>
         <p>Taste: {{cookie.taste}}</p>
         <p>Overall: {{cookie.overall_rating}}</p>
         <p>Comments: {{cookie.comments}}</p>
-        <p>Description:{{cookie.description}}</p>
         <p>Eaten by:
             <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
         </p>
+        {% for bakery in cookie.bakery.all %}
+        <div>{{bakery.name}}</div>
+            {% empty %}
+                <div> add website </div>
+            {% endfor %}
+
         <div>
             <a href="{% url 'update_cookie' cookie.pk %}" class="btn btn-info" role="button">Update</a>
             <a href="{% url 'delete_cookie' cookie.pk %}" class="btn btn-danger" role="button">DELETE</a>
