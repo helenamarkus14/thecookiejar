@@ -40,6 +40,7 @@ class Cookie(models.Model):
     taste =  models.CharField(max_length=3, choices = RATING_CHOICES, default='1')
     overall_rating = models.CharField(max_length=3, choices = RATING_CHOICES, default='1')
     user = models.ForeignKey(User, on_delete=models.CASCADE, default="1") #one to many
+    bakery = models.ManyToManyField(Bakery) #M:M
     comments = models.CharField(max_length=250)
 
     def __str__(self):

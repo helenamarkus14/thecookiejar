@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h2 class="d-flex justify-content-center">login</h2>
-    <div class="d-flex justify-content-center">
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="d-flex justify-content-center">
-                <h6>new to the cookie jar? <a href="{% url 'signup' %}">Sign Up</a></h6>
-            </div>
-            <div class="d-flex justify-content-center login-btn">
-            <input type="submit" class ="btn btn-primary" value="Submit"/>
-            </div>
+<body class="cookiedish">
+    <div class="logInForm">
+        <h2 class="d-flex justify-content-center">login</h2>
+        <div class="d-flex">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-center">
+                    <h6>new to the cookie jar? <a href="{% url 'signup' %}">Sign Up</a></h6>
+                </div>
+                <div class="d-flex justify-content-center login-btn">
+                <input type="submit" class ="btn btn-primary" value="Submit"/>
+                </div>
 
-        </form>
-    </div>    
-{% endblock %}        
+            </form>
+        </div>    
+    </div> 
+{% endblock %}       
+</body>  
