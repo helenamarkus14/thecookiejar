@@ -1,16 +1,16 @@
 {% extends 'base.html' %} 
 
 {% block content %}
+<body class="milkcookies"></body>
 <div class="d-flex justify-content-center">
     <div class="card-horizontal border border-5 cookieList">
         <a href="{% url 'cookie_detail' cookie.pk %}"> 
-            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top" style="height: auto;" alt="{{cookie.name}}">
+            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
             </a>
-    <div class="card-body" style="text-align: center; font-size: 1em; color:#E3F0DB;">
+    <div class="card-body">
         <p class="name">{{cookie.name}}</p> 
-        <p>Description:{{cookie.description}}</p>
-        <p>Apperance: {{cookie.appearance}}</p>
-        <p>Taste: {{cookie.taste}}</p>
+        <p>Description: {{cookie.description}}</p>
+        <p>Apperance: {{cookie.appearance}} &nbsp; &nbsp;  Taste: {{cookie.taste}}</p>
         <p>Overall: {{cookie.overall_rating}}</p>
         <p>Comments: {{cookie.comments}}</p>
         <p>Eaten by:
@@ -19,7 +19,7 @@
         {% for bakery in cookie.bakery.all %}
         <div>{{bakery.name}}</div>
             {% empty %}
-                <div> add website </div>
+                <div> no bakery info </div>
             {% endfor %}
 
         <div>
@@ -29,5 +29,5 @@
     </div>
     </div>
 </div>
-    
+</body>
 {% endblock %}

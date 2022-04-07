@@ -58,7 +58,11 @@ h1{
 
 
 .card-img-top {
+    /* width: 18em;
+    height: auto; */
     width: 18em;
+    height: auto;
+    object-fit: cover;
 }
 
 .card-horizontal{
@@ -130,6 +134,7 @@ h1{
   }
   .dropdown-menu {
     background-color: #3A3644;
+    
  
   }
   .dropdown-menu:hover {
@@ -139,6 +144,9 @@ h1{
     color:#fdf4ff;
     text-align: right;
 
+  }
+  .dropdownMenu {
+    padding-left: -100px;
   }
   .navbar-brand:hover {
     color:#fdf4ff;
@@ -176,4 +184,15 @@ h1{
     border:#3A3644;
     border-width: 20px;
     border-radius: 10px;
+}
+
+.overall_rating {
+    width: 20px;
+
+
+}
+
+.updateBtn {
+    display: flex;
+    justify-content: center;
 }

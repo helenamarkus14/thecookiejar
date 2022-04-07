@@ -14,11 +14,12 @@
     {% for bakery in bakeries %}
     <div class="d-flex justify-content-center">
     <div class="card-horizontal border border-5 cookieList">
-        <div class="card-body">
-        <a href="{% url 'bakery_details' bakery.id %}">see details</a>
+        <div class="card-body position-relative">
+            <a href="{% url 'bakery_detail' bakery.id %}" class="stretched-link"></a>
         <p class="name">{{bakery.name}}</p> 
     
     <p>{{bakery.location}}</p>
+    </a>
     </div>
     </div>
 </div>

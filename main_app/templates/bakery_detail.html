@@ -8,7 +8,7 @@
         <p class="name">{{bakery.name}}</p> 
         <p>{{bakery.cost}}</p>
         <p>{{bakery.location}}</p>
-        <p>{{bakery.website}}</p>
+        <p>{{bakery.website|urlize }}</p>
 
         <div>
             <a href="{% url 'update_bakery' bakery.id %}" class="btn btn-info" role="button">Update</a>
