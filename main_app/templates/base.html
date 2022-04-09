@@ -50,9 +50,9 @@
                 </li>
                 {% else %}
                 <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="dropdown-item" href="{% url 'login' %}">Login</a>
                 <li class="nav-item">
-                <a class="nav-link"href="{% url 'signup' %}">SignUp</a>
+                <a class="dropdown-item"href="{% url 'signup' %}">SignUp</a>
                 <li><a class="dropdown-item" href="/cookies">All Cookies</a></li>
                 <li><a class="dropdown-item" href="/bakeries">All Bakeries</a></li>
                 {% endif %}

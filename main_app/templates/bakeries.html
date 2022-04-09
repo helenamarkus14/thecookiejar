@@ -10,7 +10,7 @@
     </form>
 
     <h1>{{header}}</h1>
-    <a href="{% url 'create_bakery' %}">Add Bakery</a>
+    <a href="{% url 'create_bakery' %}" class="btn btn-primary">add bakery</a>
     {% for bakery in bakeries %}
     <div class="d-flex justify-content-center">
     <div class="card-horizontal border border-5 cookieList">
