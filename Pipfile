@@ -15,6 +15,7 @@ whitenoise = "*"
 django-cloudinary-storage = "*"
 django-bootstrap5 = "*"
 crispy-bootstrap5 = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
