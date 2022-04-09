@@ -2,8 +2,8 @@
 
 
 {% block content %}
-
-<h1>{{ username }}'s Collection</h1>
+<body class = milkcookies>
+<h1>My Cookie Jar</h1>
 <div class="d-flex justify-content-center">
 <a class="d-flex justify-content-center btn-sm btn-secondary addCookie"  href="{% url 'create_cookie' %}">Add Cookie</a>
 </div>
@@ -13,6 +13,7 @@
         <div class="cookies">{{ cookie.name }}</div>
     </a>
     </div>  
+</body>    
 {% endfor %}
 
 {% endblock %}
