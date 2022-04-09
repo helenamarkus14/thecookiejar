@@ -13,9 +13,9 @@ dj-database-url = "*"
 psycopg2 = "*"
 whitenoise = "*"
 django-cloudinary-storage = "*"
-django-bootstrap5 = "*"
 crispy-bootstrap5 = "*"
 django-crispy-forms = "*"
+django-bootstrap5 = "*"
 
 [dev-packages]
 
