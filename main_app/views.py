@@ -132,7 +132,8 @@ def login_view(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponseRedirect('/user/'+u)
+                    return HttpResponseRedirect('/home/')
+                    # return HttpResponseRedirect('/user/'+u)
                 else:
                     return render(request, 'login.html', {'form': form})
                     # feel free to redirect them somewhere
