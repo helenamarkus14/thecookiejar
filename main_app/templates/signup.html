@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
-    <h1>signup</h1>
-
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-
-        <input type="submit" class ="btn btn-primary" value="Signup">
-        </form>
-
+    <body class = "sprinkleSignUp">
+        
+        <div class="d-flex justify-content-center">
+            <form class="form-control form-horizontal d-flex justify-content-center p-2 bd-highlight signUpForm" method="post" enctype="multipart/form-data">
+                
+                <div class="mb-3 form-control form-text">
+                    <h2>Create Account</h2>
+                <!-- Security Feature  -->
+                {% csrf_token %} 
+                <!--  Generate inputs  -->
+                <!-- {{form.as_p}}  -->
+                {% crispy form %}
+                <!--  Submit form  -->
+                <div class="d-flex justify-content-center">
+                     <input type="submit" class ="btn btn-primary" value="Sign Up"  />
+                </div>
+                </div>
+            </form>
+        </div>
+    </body>   
 {% endblock %}        
