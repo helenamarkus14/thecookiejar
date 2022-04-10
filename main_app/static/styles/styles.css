@@ -18,7 +18,8 @@ h2 {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: 65%;
+    /* background-size: 65%; */
+    background-size: cover;
     height: 100%;
     background-color: #DDB4CB;
     background-attachment: fixed;
@@ -169,7 +170,7 @@ h2 {
 
 /* FORMS */
 
-.newForm {
+.newForm, .signUpForm {
     color:#D6B0D8;
     width: 400px;
     justify-content: center;
@@ -181,8 +182,26 @@ h2 {
     color:#D6B0D8;
     background-color:#3A3644;
     opacity: 90%;
+    
 }
 
+.signUpForm {
+margin-top: 2em;
+
+}
+.sprinkleSignUp {
+  background-image: url('./images/sprinkles.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #DDB4CB;
+  background-attachment: fixed;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat, no-repeat;
+}
 .logInForm{
     background-color:#3A3644;
     opacity: 90%;
@@ -201,6 +220,9 @@ h2 {
     border:#3A3644;
     border-width: 20px;
     border-radius: 10px;
+}
+.newCookieTitle {
+  color:#D6B0D8;
 }
 
 .overall_rating {
