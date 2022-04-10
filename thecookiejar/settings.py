@@ -55,9 +55,9 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True  #comment this out when deploying!!!!!!! important!!!!!!!!!!!!!
 
-
+# commented out to work locally uncomment when ready to deploy
 ALLOWED_HOSTS = [
-    # 'thesweetcookiejar.herokuapp.com' commented out to work locally uncomment when ready to deploy
+    'thesweetcookiejar.herokuapp.com' 
 ]
 
 
