@@ -1,14 +1,17 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<h1>Delete this yummy cookie?</h1>
+<div class="flex-column d-flex justify-content-center align-items-center mt-5 deletecookieconfirm">
+<h1>Delete {{cookie.name}} ?</h1>
+<body class="milkcookies">
 <form method="post">
   {% csrf_token %}
-  <div>
-   <!-- confirm cat delete -->
-    <input type="submit" value="Yes, all good things must crumb to an end" />
-    <!-- Redirect back to detail on cancel -->
-    <a href="{% url 'cookie_detail' cookie.pk %}">NO I AM NOT A COOKIE MONSTER</a>
+  <div class="d-flex justify-content-center mt-5">
+    <input type="submit" class="btn btn-danger deleteCookie" role="button" value="Yes, all good things must crumb to an end" />
+    <a href="{% url 'cookie_detail' cookie.pk %}" class="btn btn-info cancelDelete" role="button">NO I AM NOT A COOKIE MONSTER</a>
   </div>
+
 </form>
+</body>
+</div>
 {% endblock %}

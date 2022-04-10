@@ -99,7 +99,7 @@ h2 {
     background-color: #3A3644;
 }
 
-.navbar-brand, .dropdownMenu, .dropdown-item, .nav-link, .homepagetitle, .titlehome {
+.navbar-brand, .dropdownMenu, .dropdown-item, .nav-link, .homepagetitle, .titlehome, .searchBar, .addCookie {
     font: 5vh "Vibur";
     color: rgb(250, 217, 248);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
@@ -230,14 +230,27 @@ margin-top: 2em;
 
 
 }
+.searchBar {
+  background-color: #D6B0D8;
+}
+.searchBar:hover {
+  background-color: #D6B0D8;
+}
+.deleteBakery, .deleteCookie {
+  margin-right: 2em;
+  background-color: #e044ff;
+}
 
 .updateBtn {
     display: flex;
     justify-content: center;
 }
 
-/* home page */
+.deleteBakery, .deleteCookie:hover {
+  background-color: #e044ff;
+}
 
+/* home page */
 .thecookiejarhome {
   font-size: medium;
   font-family: 'Open Sans', sans-serif;
@@ -317,3 +330,8 @@ margin-top: 2em;
  }
   
  
+ /* Bakery */
+
+ #bakeryName {
+   font-size: 50px;
+ }
