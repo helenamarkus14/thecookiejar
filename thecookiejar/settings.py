@@ -21,8 +21,8 @@ import cloudinary.api
 # load_dotenv()
 
 # comment this out to work locally
-# DATABASE_URL = os.environ.get('DATABASE_URL')
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+DATABASE_URL = os.environ.get('DATABASE_URL')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # THIS WHOLE THING COMMENTED OUT TO WORK LOCALLY
 # If the host name starts with 'live', DJANGO_HOST = "production"
@@ -58,7 +58,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # commented out to work locally uncomment when ready to deploy
 ALLOWED_HOSTS = [
-    # 'thesweetcookiejar.herokuapp.com' 
+    'thesweetcookiejar.herokuapp.com' 
 ]
 
 
@@ -131,7 +131,7 @@ DATABASES = {
 
 
 #commented out to work locally uncomment when ready to deploy
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -171,8 +171,8 @@ USE_TZ = True
 
 
 # commented out to work locally uncomment when ready to deploy
-# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
-# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
 
 
 
