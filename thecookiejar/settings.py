@@ -11,8 +11,8 @@ from pathlib import Path
 import os
 import socket
 import psycopg2 
-# import dj_database_url commented out to work locally uncomment when ready to deploy
-# import cloudinary_storage commented out to work locally uncomment when ready to deploy
+import dj_database_url
+import cloudinary_storage 
 # from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
@@ -53,7 +53,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  #comment this out when deploying!!!!!!! important!!!!!!!!!!!!!
+# DEBUG = True  #comment this out when deploying!!!!!!! important!!!!!!!!!!!!!
 
 
 ALLOWED_HOSTS = [
@@ -81,7 +81,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware', commented out to work locally uncomment when ready to deploy
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -100,7 +100,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # '/www/STORE/main_app/templates/', commented out to work locally uncomment when ready to deploy
+            '/www/STORE/main_app/templates/'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,7 +127,10 @@ DATABASES = {
     }
 }
 
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) commented out to work locally uncomment when ready to deploy
+
+
+#commented out to work locally uncomment when ready to deploy
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -165,8 +168,12 @@ USE_TZ = True
 
 # STATIC_URL = '/static/' comment out for deployment
 
-# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) commented out to work locally uncomment when ready to deploy
-# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') commented out to work locally uncomment when ready to deploy
+
+# commented out to work locally uncomment when ready to deploy
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
+
+
 
 MEDIA_URL = '/media/'
 # image uploading not working yet
@@ -186,4 +193,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
