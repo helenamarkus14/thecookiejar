@@ -1,22 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 <body class="milkcookies">
-    <form>
-        <div class="d-flex justify-content-center">
+    <!-- <form>
+        <div class="d-flex justify-content-start pt-2 m-2">
             <input type="text" name="name" placeholder="name"/>
             <input type="submit" value="Search"/>
         <a href="{% url 'cookies' %}" class='btn btn-sm btn-secondary' role="button">Clear Search</a>
         </div>
-    </form>
+    </form> -->
+
 
     <h1>{{header}}</h1>
-    <div class="dropdown">
+    <div class="dropdown dropright d-flex justify-content-start">
+        <button class="nav-item btn dropdownMenu pl-5 mr-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-search-heart"></i>
+          </button>
+          <ul class="dropdown-menu searchBar" aria-labelledby="dropdownMenuButton1">
+            <li><form class="dropdown-item  searchBar">
+                <div class="d-flex justify-content-end pt-2 m-2">
+                    <input type="text" name="name" placeholder="name"/>
+                    <input type="submit" class='dropdown-item btn btn-sm btn-secondary' role="button" value="Search"/>
+                <a href="{% url 'cookies' %}" class='dropdown-item btn btn-sm btn-secondary' role="button">Clear Search</a>
+                </div>
+            </form>
+        </li>
         
-
-
     </div>
     {% for cookie in cookies %}
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-2">
     <div class="card-horizontal border border-5 cookieList">
             <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/ar_1.0,c_thumb,w_0.6,z_0.7/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
     <div class="card-body position-relative">

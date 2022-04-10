@@ -1,13 +1,17 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<body class="milkcookies"></body>
-<div class="d-flex justify-content-center">
+<body class="milkcookies">
+<div class="d-flex justify-content-center mt-5">
     <div class="card-horizontal border border-5 cookieList">
         <a href="{% url 'cookie_detail' cookie.pk %}"> 
             <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
             </a>
     <div class="card-body">
+        <div class="d-flex justify-content-end">
+            <a href="{% url 'update_cookie' cookie.pk %}" class="edit d-flex justify-content-start" role="button"><i class="bi bi-pen"></i></a>
+            <a href="{% url 'delete_cookie' cookie.pk %}" class="trash d-flex justify-content-start" role="button"><i class="bi bi-trash"></i></a>
+        </div>
         <p class="name">{{cookie.name}}</p> 
         <p>Description: {{cookie.description}}</p>
         <p>Apperance: {{cookie.appearance}} &nbsp; &nbsp;  Taste: {{cookie.taste}}</p>
@@ -22,10 +26,6 @@
                 <div> no bakery info </div>
             {% endfor %}
 
-        <div>
-            <a href="{% url 'update_cookie' cookie.pk %}" class="btn btn-info" role="button">Update</a>
-            <a href="{% url 'delete_cookie' cookie.pk %}" class="btn btn-danger" role="button">DELETE</a>
-        </div>
     </div>
     </div>
 </div>

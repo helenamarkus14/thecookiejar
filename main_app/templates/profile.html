@@ -4,15 +4,21 @@
 {% block content %}
 <body class = milkcookies>
 <h1>My Cookie Jar</h1>
-<div class="d-flex justify-content-center">
-<a class="d-flex justify-content-center btn-sm btn-secondary addCookie"  href="{% url 'create_cookie' %}">Add Cookie</a>
+
+<a class="d-flex justify-content-center addCookie mb-4" href="{% url 'create_cookie' %}" role="button"> <i class="bi bi-plus-circle-fill"></i> Add Cookie</a>
 </div>
 {% for cookie in cookies %}
-    <div class="d-flex justify-content-center">
-    <a href="/cookies/{{ cookie.id}}">
-        <div class="cookies">{{ cookie.name }}</div>
-    </a>
-    </div>  
+<div class="d-flex justify-content-center">
+    <div class="card-horizontal border border-5 cookieList">
+            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/ar_1.0,c_thumb,w_0.6,z_0.7/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
+    <div class="card-body position-relative">
+        <p class="name">{{cookie.name}}</p> 
+    
+    <p>Description: {{cookie.description}}</p>
+        <a href="{% url 'cookie_detail' cookie.pk %}" class="stretched-link" ></a>
+    </div>
+    </div>
+</div>
 </body>    
 {% endfor %}
 
