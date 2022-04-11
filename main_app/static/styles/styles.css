@@ -39,6 +39,7 @@ h2 {
     /* background-size: contain; */
   }
 
+
 .cookiesAssortment {
     background-image: url('./images/cookies.jpg');
     background-repeat: no-repeat;
@@ -164,7 +165,7 @@ h2 {
   .dropdownMenu {
     padding-left: -100px;
   }
-  .navbar-brand:hover {
+  .navbar-brand:hover, .loginbtn:hover , .bakeCookie:hover, .bakery:hover{
     color:#fdf4ff;
   }
 
@@ -207,7 +208,7 @@ margin-top: 2em;
     opacity: 90%;
     justify-content: center;
     width: 300px;           
-    height: 300px;        
+    height: auto;        
     position: fixed;
     top: 50%;
     left: 50%;
@@ -220,6 +221,10 @@ margin-top: 2em;
     border:#3A3644;
     border-width: 20px;
     border-radius: 10px;
+}
+
+#loginhome {
+  background-color: rgb(170, 240, 227);
 }
 .newCookieTitle {
   color:#D6B0D8;
@@ -246,9 +251,50 @@ margin-top: 2em;
     justify-content: center;
 }
 
-.deleteBakery, .deleteCookie:hover {
+.deleteBakery, .deleteCookie:hover{
   background-color: #e044ff;
 }
+
+
+.addCookie, .bakeCookie, .bakery , .loginbtn  {
+    font: 3vh "Open Sans";
+    color: rgb(250, 217, 248);
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
+
+  }
+  @keyframes blink {
+    78% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    79%{
+       color: #333;
+    }
+    80% {
+      
+      text-shadow: none;
+    }
+    81% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    82% {
+      color: #333;
+      text-shadow: none;
+    }
+    83% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+    92% {
+      color: #333;
+      text-shadow: none;
+    }
+    92.5% {
+      color: inherit;
+      text-shadow: inherit;
+    }
+  }
 
 /* home page */
 .thecookiejarhome {
@@ -328,7 +374,11 @@ margin-top: 2em;
      text-shadow: inherit;
    }
  }
-  
+
+
+ .cookieImages {
+   min-height: auto;
+ }
  
  /* Bakery */
 
