@@ -5,42 +5,34 @@ The Cookie Jar
 {% endblock %}
 {% block content%}
 <body class="homepage">
-    <div class="d-flex flex-column homepagelinks mt-5">
-        <h3 class="titlehome">Welcome to the cookie jar</h3>
-        <h2 class = "sweetcookie">the sweetest place to keep your cookies</h2>
-    </div>
-<div class="thecookiejarhome">
-    <!-- <div class="card sweetcookie text-center p-3">
-        <blockquote class="blockquote mb-0">
-          
-
-          <footer class="blockquote-footer">
-            <small>
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-          </footer>
-        </blockquote>
-      </div> -->
-
-      <div class="d-flex align-items-center">
-        <div class="col-sm-6">
-          
-            <div class="card-body cookienav">
-              <p class="card-text">Add a cookie and give it a rating!</p>
-              <a href="{% url 'create_cookie' %}" class="btn btn-primary">bake cookie</a>
-            </div>
     
-        </div>
-        <div class="col-sm-6">
-        
-            <div class="card-body bakerynav">
-              <p class="card-text">Add a bakery so when it is time for a treat, you know where to go!</p>
-              <a href="{% url 'create_bakery' %}" class="btn btn-primary">add bakery</a>
+    <div class ="homepageContainer d-flex justify-content-center">
+            <div class="d-flex flex-column homepagelinks mt-5">
+                <h3 class="titlehome">Welcome to the cookie jar</h3>
+                <h2 class = "sweetcookie">the sweetest place to keep your cookies</h2>
             </div>
-      
+            <div class="thecookiejarhome">
+        
+            <div class="d-flex align-items-center">
+                <div class="d-flex col-sm-6">
+                
+                    <div class="card-body cookienav">
+                    <p class="card-text">Add a cookie and give it a rating based on the five senses!</p>
+                    <a href="{% url 'create_cookie' %}" class="btn bakeCookie pt-0">bake cookie</a>
+                    </div>
+            
+                </div>
+                <div class="col-sm-6">
+                
+                    <div class="card-body bakerynav">
+                    <p class="card-text">Add a bakery so when it is time for a treat, you know where to go!</p>
+                    <a href="{% url 'create_bakery' %}" class="pb-5 pt-0 btn bakery">add bakery</a>
+                    </div>
+            
+                </div>
+            </div>
         </div>
-      </div>
-</div>
+    </div>
 
 </body>
 
