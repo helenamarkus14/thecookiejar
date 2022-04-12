@@ -6,9 +6,9 @@ The Cookie Jar
 {% block content%}
 <body class="homepage">
     
-    <div class ="homepageContainer d-flex justify-content-center">
+    <div class ="homepageContainer d-flex justify-content-center align-items-center"">
             <div class="d-flex flex-column homepagelinks mt-5">
-                <h3 class="titlehome">Welcome to the cookie jar</h3>
+                <h3 class="titlehome">Welcome to the cookie jar,</h3>
                 <h2 class = "sweetcookie">the sweetest place to keep your cookies</h2>
             </div>
             <div class="thecookiejarhome">
@@ -17,7 +17,7 @@ The Cookie Jar
                 <div class="d-flex col-sm-6">
                 
                     <div class="card-body cookienav">
-                    <p class="card-text">Add a cookie and give it a rating based on the five senses!</p>
+                    <p class="card-text">Add a cookie and give it a rating based on taste and how delicious it looks!</p>
                     <a href="{% url 'create_cookie' %}" class="btn bakeCookie pt-0">bake cookie</a>
                     </div>
             

@@ -11,18 +11,31 @@ h2 {
 }
 /* backgrounds */
 
-.milkcookies {
-    background-image: url('./images/milkcookies.png');
-    background-repeat: no-repeat;
-    background-position: center -30px;
+#loginhome {
+  background-image: url('./images/cookiedish.jpg'), url('./images/cookiecream.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    /* background-size: 65%; */
-    background-size: cover;
-    height: 100%;
+    background-size: 50%;
     background-color: #DDB4CB;
     background-attachment: fixed;
+    height: 100%;
+    background-position: left -3vh, right -3vh;
+    background-repeat: no-repeat ,no-repeat;
+
+}
+.milkcookies {
+    background-image: url('./images/milkcookies.png');
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #DDB4CB;
+  background-attachment: fixed;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .cookiedish {
@@ -100,7 +113,7 @@ h2 {
     background-color: #3A3644;
 }
 
-.navbar-brand, .dropdownMenu, .dropdown-item, .nav-link, .homepagetitle, .titlehome, .searchBar, .addCookie {
+h1, .navbar-brand, .dropdownMenu, .dropdown-item, .nav-link, .homepagetitle, .searchBar{
     font: 5vh "Vibur";
     color: rgb(250, 217, 248);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
@@ -190,7 +203,7 @@ h2 {
 margin-top: 2em;
 
 }
-.sprinkleSignUp {
+.sprinkleSignUp{
   background-image: url('./images/sprinkles.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -206,18 +219,14 @@ margin-top: 2em;
 .logInForm{
     background-color:#3A3644;
     opacity: 90%;
+    display: flex;
     justify-content: center;
     width: 300px;           
     height: auto;        
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 5px; 
     color:#D6B0D8;
-    margin-top: -100px;    
-    margin-left: -550px;     
+    margin-top: 30vh;    
     border:#3A3644;
     border-width: 20px;
     border-radius: 10px;
@@ -225,8 +234,9 @@ margin-top: 2em;
 
 #loginhome {
   background-color: rgb(170, 240, 227);
+
 }
-.newCookieTitle {
+.newCookieTitle, .newBakeryTitle {
   color:#D6B0D8;
 }
 
@@ -255,8 +265,12 @@ margin-top: 2em;
   background-color: #e044ff;
 }
 
+.addCookie:hover, .updateBtn:hover {
+  color:#fdf4ff;
+}
 
-.addCookie, .bakeCookie, .bakery , .loginbtn  {
+
+.addCookie, .bakeCookie, .bakery , .loginbtn , .updateBtn{
     font: 3vh "Open Sans";
     color: rgb(250, 217, 248);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
@@ -327,13 +341,13 @@ margin-top: 2em;
 
 .cookienav, .bakerynav {
     margin-right: 100px;
-    height: 120px;
+    height: 130px;
 }
- .sweetcookie {
+ .sweetcookie, .titlehome {
    background-color: transparent;
    text-align: center;
    border: none;
-   margin-bottom: 100px;
+   margin-bottom: 10px;
    font: 5vh "Vibur";
    
 
@@ -377,7 +391,8 @@ margin-top: 2em;
 
 
  .cookieImages {
-   min-height: auto;
+    width: fill;
+    height: fill;
  }
  
  /* Bakery */

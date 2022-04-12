@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-<body class = "cookiesAssortment">
-	<h1>Edit Bakery</h1>
-	
-	<form class="form-control d-inline-flex p-2 bd-highlight" method="post" enctype="multipart/form-data">
-        <div class="mb-3 form-control form-text">
-		<!-- Security Feature  -->
-		{% csrf_token %} 
-		<!--  Generate inputs  -->
-		{{form.as_p}} 
-		<!--  Submit form  -->
-		<input type="submit" class ="btn btn-primary" value="Submit" />
-        </div>
-	</form>
-</body>
+	<body class = "cookiesAssortment">
+		<h1>Edit Bakery</h1>
+		<div class="d-flex justify-content-center">
+		<form class="form-control form-horizontal d-flex justify-content-center p-2 bd-highlight newForm" method="post" enctype="multipart/form-data">
+			<div class="mb-3 form-control form-text">
+			<!-- Security Feature  -->
+			{% csrf_token %} 
+			<!--  Generate inputs  -->
+			<!-- {{form.as_p}}  -->
+			{% crispy form %}
+			<!--  Submit form  -->
+			<div class="d-flex justify-content-center">
+				<input type="submit" class ="btn updateBtn" value="Update" />
+			</div>
+			</div>
+		</form>
+	</div>
+	</body>
 {% endblock %}

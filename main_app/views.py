@@ -58,7 +58,7 @@ class CookieDetail(DetailView):
     #     order_by = self.request.GET.get('overall_rating')  
     #     self.cookies = Cookie.objects.filter(
             
-    #     )
+    #     ) icebox idea to sort by rating
 
 # Update Cookie
 @method_decorator(login_required, name='dispatch') 
