@@ -1,30 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-<body class="milkcookies">
-    <!-- <form>
-        <div class="d-flex justify-content-start pt-2 m-2">
-            <input type="text" name="name" placeholder="name"/>
-            <input type="submit" value="Search"/>
-        <a href="{% url 'cookies' %}" class='btn btn-sm btn-secondary' role="button">Clear Search</a>
-        </div>
-    </form> -->
-
-
+<body class="sprinkleSignUp">
     <h1>{{header}}</h1>
-    <div class="dropdown dropend d-flex justify-content-start">
-        <button class="nav-item btn dropdownMenu pl-5 mr-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-search-heart"></i>
-          </button>
-          <ul class="dropdown-menu searchBar" aria-labelledby="dropdownMenuButton1">
-            <li><form class="dropdown-item  searchBar">
-                <div class="d-flex justify-content-end pt-2 m-2">
-                    <input type="text" name="name" placeholder="name"/>
-                    <input type="submit" class='dropdown-item btn btn-sm btn-secondary' role="button" value="Search"/>
-                <a href="{% url 'cookies' %}" class='dropdown-item btn btn-sm btn-secondary' role="button">Clear Search</a>
-                </div>
-            </form>
-        </li>
+    <div class ="d-flex pl-5 bakerycontaier justify-content-evenly ">
+        <div class="dropdown dropend d-flex justify-content-start">
         
+                <button class="nav-item btn dropdownMenu pl-5  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-search-heart"></i>
+                </button>
+        
+            <ul class="dropdown-menu searchBar" aria-labelledby="dropdownMenuButton1">
+                <li><form class="dropdown-item  searchBar">
+                    <div class="d-flex justify-content-end pt-2 m-2">
+                        <input type="text" name="name" placeholder="name"/>
+                        <input type="submit" class='dropdown-item btn btn-sm btn-secondary' role="button" value="Search"/>
+                    <a href="{% url 'cookies' %}" class='dropdown-item btn btn-sm btn-secondary' role="button">Clear Search</a>
+                    </div>
+                </form>
+            </li>
+            
+        </div>
+
+        <div class = "d-flex justify-content-center addCookie">
+            {% if user.is_authenticated %}
+            <a class="addCookie mb-4" href="{% url 'create_cookie' %}" role="button"> <i class="bi bi-plus-circle-fill"></i> Add Cookie</a>
+            {% else %}
+            {% endif%}
+        </div>  
+
     </div>
     {% for cookie in cookies %}
     <div class="d-flex justify-content-center mt-2">
