@@ -26,11 +26,12 @@
         <p>Eaten by:
             <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
         </p>
+
         {% for bakery in cookie.bakery.all %}
-        <div>{{bakery.name}}</div>
-            {% empty %}
-                <div> no bakery info </div>
-            {% endfor %}
+            <div>{{bakery.name}}</div>
+        {% empty %}
+            <div> no bakery info </div>
+        {% endfor %}
 
     </div>
     </div>

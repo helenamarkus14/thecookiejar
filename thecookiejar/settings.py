@@ -131,7 +131,7 @@ DATABASES = {
 
 
 #commented out to work locally uncomment when ready to deploy
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -171,8 +171,8 @@ USE_TZ = True
 
 
 # commented out to work locally uncomment when ready to deploy
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
+# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
 
 
 
