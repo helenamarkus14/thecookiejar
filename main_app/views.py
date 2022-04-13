@@ -99,13 +99,13 @@ class UpdateBakery(UpdateView):
     model = Bakery
     fields = '__all__'
     template_name = 'update_bakery.html'
-    sucess_url = '/bakeries'
+    success_url = '/bakeries'
 
 @method_decorator(login_required, name='dispatch')   
 class DeleteBakery(DeleteView):
     model = Bakery
     template_name = 'delete_bakery.html'
-    sucess_url = '/bakeries'     
+    success_url = '/bakeries'     
 
 
 
