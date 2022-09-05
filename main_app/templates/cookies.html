@@ -30,8 +30,8 @@
 
     </div>
     {% for cookie in cookies %}
-    <div class="d-flex justify-content-center mt-2">
-    <div class="card-horizontal border border-5 cookieList">
+    <div class="d-flex flex-column m-5">
+    <div class="card-horizontal border border-5 cookieList mr-3 ml-3 pr-4 pl-4">
             <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/ar_1.0,c_thumb,w_0.6,z_0.7/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
     <div class="card-body position-relative">
         <p class="name">{{cookie.name}}</p> 

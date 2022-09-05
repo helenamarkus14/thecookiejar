@@ -1,69 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Open+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Vibur');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 
 h1{
     color: #3A3644;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Amatic SC', cursive;
     text-align: center;
+    font-size: xx-large;
 }
 h2 {
   padding-top: 10px;
 }
 /* backgrounds */
-
 #loginhome {
-  background-image: url('./images/cookiedish.jpg'), url('./images/cookiecream.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 50%;
-    background-color: #DDB4CB;
-    background-attachment: fixed;
-    height: 100%;
-    background-position: left -3vh, right -3vh;
-    background-repeat: no-repeat ,no-repeat;
+  /* background-color: rgb(170, 240, 227); */
+  background-color: #C9D7EA;
 
 }
+/* #loginhome {
+  /* background-image: url('./images/cookiedish.jpg'), url('./images/cookiecream.jpg'); */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% auto;
+    background-color: #DDB4CB;
+    background-attachment: fixed;
+    /* height: 100%; */
+    /* background-position: left -3vh, right -3vh;
+    background-repeat: no-repeat ,no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute; */ 
+
 .milkcookies {
-    background-image: url('./images/milkcookies.png');
-    -webkit-background-size: cover;
+    /* background-image: url('./images/milkcookies.png'); */
+    /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #DDB4CB;
-  background-attachment: fixed;
+  -o-background-size: cover; */
+  /* background-color: rgb(170, 240, 227); */
+  background-color: #C9D7EA;
+  /* background-attachment: fixed;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat; */
 }
 
 .cookiedish {
-    background-image: url('./images/cookiedish.jpg');
-    -webkit-background-size: cover;
+    /* background-image: url('./images/cookiedish.jpg'); */
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 50%;
-    background-color: #DDB4CB;
-    background-attachment: fixed;
+    -o-background-size: cover; */
+    /* background-size: 50%; */
+    /* background-color: rgb(170, 240, 227); */
+    background-color: #C9D7EA;
+    /* background-attachment: fixed;
     height: 100%;
     background-position: left -30px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     /* background-size: contain; */
   }
 
 
 .cookiesAssortment {
-    background-image: url('./images/cookies.jpg');
-    background-repeat: no-repeat;
+    /* background-image: url('./images/cookies.jpg'); */
+    /* background-repeat: no-repeat;
     background-position: center -30px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 65%;
-    height: 100%;
-    background-color: #DDB4CB;
-    background-attachment: fixed;
+    -o-background-size: cover; */
+    /* background-size: 65%;
+    height: 100%; */
+    /* background-color: rgb(170, 240, 227); */
+    background-color: #C9D7EA;
+    /* background-attachment: fixed; */
 }
 /* .milkcookies {
     background-image: url('/main_app/static/images/milkcookies.png');
@@ -114,8 +125,8 @@ h2 {
 }
 
 h1, .navbar-brand, .dropdownMenu, .dropdown-item, .nav-link, .homepagetitle, .searchBar{
-    font: 5vh "Vibur";
-    color: rgb(250, 217, 248);
+    font: 5vh "Amatic SC";
+    color: rgb(170, 240, 227);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
 
   }
@@ -204,36 +215,33 @@ margin-top: 2em;
 
 }
 .sprinkleSignUp{
-  background-image: url('./images/sprinkles.jpg');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #DDB4CB;
-  background-attachment: fixed;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-repeat: no-repeat, no-repeat;
+/* background-color: #C9D7EA; */
+background-color: #C9D7EA;
+
 }
 .logInForm{
     background-color:#3A3644;
     opacity: 90%;
     display: flex;
     justify-content: center;
-    width: 300px;           
-    height: auto;        
+    width: 100%;           
+    height: 100%;        
     padding-left: 10px;
     padding-right: 5px; 
+    padding-top: 100px;
     color:#D6B0D8;
     margin-top: 30vh;    
     border:#3A3644;
     border-width: 20px;
     border-radius: 10px;
 }
+.title{
+  padding-bottom:100px;
+}
 
 #loginhome {
-  background-color: rgb(170, 240, 227);
+  /* background-color: rgb(170, 240, 227); */
+  background-color: #C9D7EA;
 
 }
 .newCookieTitle, .newBakeryTitle {
@@ -271,7 +279,7 @@ margin-top: 2em;
 
 
 .addCookie, .bakeCookie, .bakery , .loginbtn , .updateBtn{
-    font: 3vh "Open Sans";
+    font: 3vh "Amatic SC";
     color: rgb(250, 217, 248);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
 
@@ -313,7 +321,7 @@ margin-top: 2em;
 /* home page */
 .thecookiejarhome {
   font-size: medium;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Amatic SC', cursive;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -322,12 +330,13 @@ margin-top: 2em;
 }
 
 .homepage {
-  background-image: url('./images/sprinkles.jpg');
-  -webkit-background-size: cover;
+  /* background-image: url('./images/sprinkles.jpg'); */
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: 100%;
-  background-color: #DDB4CB;
+  /* background-color: rgb(170, 240, 227); */
+  background-color: #C9D7EA;
   background-attachment: fixed;
   height: 100%;
   background-position: left -30px;
@@ -337,22 +346,19 @@ margin-top: 2em;
 
 .titlehome {
   text-align: center;
+  font-size: xx-large;
 }
 
-.cookienav, .bakerynav {
-    margin-right: 100px;
-    height: 130px;
-}
  .sweetcookie, .titlehome {
    background-color: transparent;
    text-align: center;
    border: none;
    margin-bottom: 10px;
-   font: 5vh "Vibur";
+   font: 10vh "Amatic SC";
    
 
-   color: rgb(217, 250, 244);
-   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
+   color: black;
+   /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000; */
 
  }
  @keyframes blink {
