@@ -30,22 +30,37 @@
 
     </div>
     {% for cookie in cookies %}
-    <div class="d-flex flex-column m-5">
-    <div class="card-horizontal border border-5 cookieList mr-3 ml-3 pr-4 pl-4">
-            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/ar_1.0,c_thumb,w_0.6,z_0.7/{{cookie.img}}" class="card-img-top" alt="{{cookie.name}}">
-    <div class="card-body position-relative">
-        <p class="name">{{cookie.name}}</p> 
+    <div class="d-flex justify-content-center mt-5">
+        <div class="card-horizontal border border-5 cookieList">
+            <div class="cookieImg d-flex ">
+                
+                <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/ar_1.0,c_thumb,w_0.6,z_0.7/{{cookie.img}}" class="card-img-top cookieImages" alt="{{cookie.name}}">
+                
+            </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-end">
+                {% if user.is_authenticated %}
+                <a href="{% url 'update_cookie' cookie.pk %}" class="edit d-flex justify-content-start" role="button"><i class="bi bi-pen"></i></a>
+                <a href="{% url 'delete_cookie' cookie.pk %}" class="trash d-flex justify-content-start" role="button"><i class="bi bi-trash"></i></a>
+                {% else %}
+                
+                {% endif%}
+            </div>
+            <p class="cookieNameTitle">{{cookie.name}}</p> 
+            <!-- <p>Description: </p> -->
+            <div class="cookieDetailCard">
+                <p>{{cookie.description}}</p>
+                <a href="{% url 'cookie_detail' cookie.pk %}"> See Details</a>
     
-    <p>Description: {{cookie.description}}</p>
-    <p>Eaten by:
-        <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
-    </p>
-        <a href="{% url 'cookie_detail' cookie.pk %}" class="stretched-link" ></a>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+        
     </div>
     </div>
 </div>
-
-
     {% endfor %}
 {% endblock %}
 </body>
