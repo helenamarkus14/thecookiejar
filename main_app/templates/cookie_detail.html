@@ -6,7 +6,7 @@
     <div class="card-horizontal border border-5 cookieList">
         <div class="cookieImg d-flex ">
             
-            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/{{cookie.img}}" class="card-img-top cookieImages" alt="{{cookie.name}}">
+            <img src="https://res.cloudinary.com/dq2v2nhpp/image/upload/ar_1.0,c_thumb,w_0.6,z_0.7/{{cookie.img}}" class="card-img-top cookieImages" alt="{{cookie.name}}">
             
         </div>
     <div class="card-body">
@@ -18,20 +18,24 @@
             
             {% endif%}
         </div>
-        <p class="name">{{cookie.name}}</p> 
-        <p>Description: {{cookie.description}}</p>
-        <p>Apperance: {{cookie.appearance}} &nbsp; &nbsp;  Taste: {{cookie.taste}}</p>
-        <p>Overall: {{cookie.overall_rating}}</p>
-        <p>Comments: {{cookie.comments}}</p>
-        <p>Eaten by:
-            <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
-        </p>
+        <p class="cookieNameTitle">{{cookie.name}}</p> 
+        <!-- <p>Description: </p> -->
+        <div class="cookieDetailCard">
+            <p>{{cookie.description}}</p>
+            <p>Looks: {{cookie.appearance}} &nbsp; &nbsp;  Taste: {{cookie.taste}}</p>
+            <p>Overall: {{cookie.overall_rating}}</p>
+            <p>Comments: {{cookie.comments}}</p>
+            <p>Eaten by:
+                <a href="/user/{{ cookie.user.username }}">{{ cookie.user.username }}</a>
+            </p>
 
-        {% for bakery in cookie.bakery.all %}
-            <div>{{bakery.name}}</div>
-        {% empty %}
-            <div> no bakery info </div>
-        {% endfor %}
+            {% for bakery in cookie.bakery.all %}
+                <div>{{bakery.name}}</div>
+            {% empty %}
+                <div> no bakery info </div>
+            {% endfor %}
+
+        </div>
 
     </div>
     </div>

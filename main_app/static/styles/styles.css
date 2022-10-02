@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Open+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Vibur');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200&display=swap');
 
 
 h1{
     color: #3A3644;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Inter Tight', sans-serif;
     text-align: center;
     font-size: xx-large;
 }
@@ -88,7 +89,7 @@ h2 {
 .card-img-top {
     /* width: 18em;
     height: auto; */
-    width: 18em;
+    width: 100%;
     height: auto;
     object-fit: cover;
 }
@@ -99,10 +100,10 @@ h2 {
 }
 
 .card-body {
-    width: 25em;
-    display: block;
+    width:100%;
+    /* display: block; */
     height: auto;
-    text-align: center; 
+    /* text-align: center;  */
     font-size: 1em; 
     color: #D6B0D8;
     background-color: #3A3644;
@@ -125,7 +126,7 @@ h2 {
 }
 
 h1, .navbar-brand, .dropdownMenu, .dropdown-item, .nav-link, .homepagetitle, .searchBar{
-    font: 5vh "Amatic SC";
+    font: 5vh 'Inter Tight', sans-serif;
     color: rgb(170, 240, 227);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
 
@@ -279,7 +280,7 @@ background-color: #C9D7EA;
 
 
 .addCookie, .bakeCookie, .bakery , .loginbtn , .updateBtn{
-    font: 3vh "Amatic SC";
+    font: 3vh 'Inter Tight', sans-serif;
     color: rgb(250, 217, 248);
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #e044ff, 0 0 0.5em #e044ff, 0 0 0.1em #e044ff, 0 10px 3px #000;
 
@@ -321,7 +322,7 @@ background-color: #C9D7EA;
 /* home page */
 .thecookiejarhome {
   font-size: medium;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Inter Tight', sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -354,7 +355,7 @@ background-color: #C9D7EA;
    text-align: center;
    border: none;
    margin-bottom: 10px;
-   font: 10vh "Amatic SC";
+   font: 10vh 'Inter Tight', sans-serif;
    
 
    color: black;
@@ -401,6 +402,14 @@ background-color: #C9D7EA;
     height: fill;
  }
  
+ .cookieDetailCard {
+  font-family: 'Inter Tight', sans-serif;
+ }
+ .cookieNameTitle {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 60px;
+
+ }
  /* Bakery */
 
  #bakeryName {
