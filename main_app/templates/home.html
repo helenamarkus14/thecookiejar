@@ -15,10 +15,15 @@ The Cookie Jar
         
             <div class="d-flex">
                 <div class="d-flex flex-column">
-                
+                    {% if user.is_authenticated %}
                     <div class="card-body cookienav">
                     <p class="card-text">Add a cookie and give it a rating based on taste and how delicious it looks!</p>
                     <a href="{% url 'create_cookie' %}" class="btn bakeCookie pt-0">bake cookie</a>
+                    {% else %}
+                    <div> You must be logged in to start collecting
+                        <a href="{% url 'login' %}" class="btn bakeCookie pt-0">login</a>
+                    </div>
+                    {% endif %}
                     </div>
             
                 </div>
