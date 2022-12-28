@@ -5,6 +5,7 @@
 
 :root {
   font-family: 'Inter Tight', sans-serif;
+  
 }
 h1{
     color: #3A3644;
@@ -19,7 +20,9 @@ h2 {
 /* backgrounds */
 #loginhome {
   /* background-color: rgb(170, 240, 227); */
-  background-color: #042758;
+  /* background-color: #042758; */
+  background: linear-gradient(to left, #92A8D1 70%, #92A8D1 100%);
+  /* background: linear-gradient(#e66465, #9198e5); */
 
 }
 .logInForm {
@@ -52,7 +55,7 @@ h2 {
   -moz-background-size: cover;
   -o-background-size: cover; */
   /* background-color: rgb(170, 240, 227); */
-  background-color: #C9D7EA;
+  background: linear-gradient(to left, #92A8D1 70%, #92A8D1 100%);
   /* background-attachment: fixed;
   height: 100%;
   background-position: center;
@@ -67,7 +70,7 @@ h2 {
     -o-background-size: cover; */
     /* background-size: 50%; */
     /* background-color: rgb(170, 240, 227); */
-    background-color: #C9D7EA;
+    background: linear-gradient(to left, #92A8D1 70%, #92A8D1 100%);
     /* background-attachment: fixed;
     height: 100%;
     background-position: left -30px;
@@ -86,7 +89,7 @@ h2 {
     /* background-size: 65%;
     height: 100%; */
     /* background-color: rgb(170, 240, 227); */
-    background-color: #C9D7EA;
+    background: linear-gradient(to left, #92A8D1 70%, #92A8D1 100%);
     /* background-attachment: fixed; */
 }
 /* .milkcookies {
@@ -97,7 +100,12 @@ h2 {
     background-size: cover;
 } */
 
-
+.card {
+  max-width: 100%;
+  width: 1100px;
+  /* display: flex;
+  justify-content: center; */
+}
 .card-img-top {
     /* width: 18em;
     height: auto; */
@@ -109,7 +117,8 @@ h2 {
 .card-horizontal{
     display: flex;
     align-items: stretch;
-    width:fit-content
+    /* width: 1100px;
+    max-width: 100%; */
     /* flex-grow: 0; */
 }
 /* @media screen and (min-width: 40em) {
