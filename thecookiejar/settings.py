@@ -10,8 +10,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import socket
-# import psycopg2 
-# import dj_database_url
+import psycopg2 
+import dj_database_url
 import cloudinary_storage 
 # from dotenv import load_dotenv
 import cloudinary
@@ -21,26 +21,26 @@ import cloudinary.api
 # load_dotenv()
 
 # comment this out to work locally
-# DATABASE_URL = os.environ.get('DATABASE_URL')
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+DATABASE_URL = os.environ.get('DATABASE_URL')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # THIS WHOLE THING COMMENTED OUT TO WORK LOCALLY
 # If the host name starts with 'live', DJANGO_HOST = "production"
-# if socket.gethostname().startswith('live'):
-#     DJANGO_HOST = "production"
+if socket.gethostname().startswith('live'):
+    DJANGO_HOST = "production"
 # # Else if host name starts with 'test', set DJANGO_HOST = "test"
-# elif socket.gethostname().startswith('test'): 
-#     DJANGO_HOST = "testing"
-# else:
+elif socket.gethostname().startswith('test'): 
+    DJANGO_HOST = "testing"
+else:
 # # If host doesn't match, assume it's a development server, set DJANGO_HOST = "development"
-#     DJANGO_HOST = "development"
+    DJANGO_HOST = "development"
 # # Define general behavior variables for DJANGO_HOST and all others
-# if DJANGO_HOST == "production":
-#     DEBUG = False
-#     STATIC_URL = 'https://thesweetcookiejar.herokuapp.com/'
-# else:
-#     DEBUG = True
-#     STATIC_URL = '/static/'
+if DJANGO_HOST == "production":
+    DEBUG = False
+    STATIC_URL = 'https://thesweetcookiejar.herokuapp.com/'
+else:
+    DEBUG = True
+    STATIC_URL = '/static/'
 
 
 
@@ -54,12 +54,12 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  #comment this out when deploying!!!!!!! important!!!!!!!!!!!!!
+# DEBUG = True  #comment this out when deploying!!!!!!! important!!!!!!!!!!!!!
 
 # commented out to work locally uncomment when ready to deploy
-# ALLOWED_HOSTS = [
-#     'thesweetcookiejar.herokuapp.com' 
-# ]
+ALLOWED_HOSTS = [
+    'thesweetcookiejar.herokuapp.com' 
+]
 
 
 # Application definition
@@ -132,7 +132,7 @@ DATABASES = {
 
 
 #commented out to work locally uncomment when ready to deploy
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True) 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -173,8 +173,8 @@ STATIC_URL = '/static/'
 
 
 # commented out to work locally uncomment when ready to deploy
-# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
-# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') 
 
 
 
